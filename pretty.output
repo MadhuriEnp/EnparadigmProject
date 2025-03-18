@@ -1,0 +1,71 @@
+@udtGametype @simpath
+Feature: simstudio Admin Login feature # features/UDTGametype.feature:2
+
+  Background: Login functionality with valid credentials  # features/UDTGametype.feature:4
+
+  @VerifyingLifeLine
+  Scenario: Tc005 Verify the functionality of lifeline in the sim while playing                                 # features/UDTGametype.feature:45
+    Given user is in simstudio admin login page                                                                 # features/steps/simStudioAdmin_steps.py:7
+    When user clicks on sign in with google button and enters valid credentials                                 # features/steps/simStudioAdmin_steps.py:13
+    Then user should able to see simstudio dashboard page                                                       # features/steps/simStudioAdmin_steps.py:18
+    When user searches for already created universal DT module                                                  # features/steps/UDTGametype_steps.py:14
+    Then user should able to see the search outcome                                                             # features/steps/UDTGametype_steps.py:19
+    When user clicks on play button                                                                             # features/steps/UDTGametype_steps.py:24
+    And user starts the play the game                                                                           # features/steps/UDTGametype_steps.py:59
+      Traceback (most recent call last):
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveproject\venv\Lib\site-packages\behave\model.py", line 1329, in run
+          match.run(runner.context)
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveproject\venv\Lib\site-packages\behave\matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features\steps\UDTGametype_steps.py", line 61, in step_impl
+          context.UDTgametype.startsPlayGame()
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveProject\pages\UDT_Gametype_page.py", line 713, in startsPlayGame
+          self.actions.newTab1Click(self.closeBtn)
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveProject\pages\WebActions.py", line 254, in newTab1Click
+          self.page2.click(selector)
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveproject\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9921, in click
+          self._sync(
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveproject\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+          return task.result()
+                 ^^^^^^^^^^^^^
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveproject\venv\Lib\site-packages\playwright\_impl\_page.py", line 827, in click
+          return await self._main_frame.click(**locals_to_params(locals()))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveproject\venv\Lib\site-packages\playwright\_impl\_frame.py", line 488, in click
+          await self._channel.send("click", locals_to_params(locals()))
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveproject\venv\Lib\site-packages\playwright\_impl\_connection.py", line 61, in send
+          return await self._connection.wrap_api_call(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "C:\NewEnp\Enparadigm\Enparadigm\Enparadigm\behaveproject\venv\Lib\site-packages\playwright\_impl\_connection.py", line 528, in wrap_api_call
+          raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+      playwright._impl._errors.TimeoutError: Page.click: Timeout 30000ms exceeded.
+      Call log:
+        - waiting for locator("//button[text()='Close']")
+
+    Then user should able to see enabled all three lifeline options                                             # None
+    And user should able to see the text when hovering on the lifelines                                         # None
+    When user clicks on preditcion button                                                                       # None
+    Then user should able to see a prediction message appearing                                                 # None
+    When user clicks on any option of the choices                                                               # None
+    Then user should able to prediction text on the option which we clicked                                     # None
+    And user should able to see disabled all three lifeline option                                              # None
+    When user clicks on submit button                                                                           # None
+    Then user should able to see disabled prediction button and enabled clarity and popularity button in step 2 # None
+    And user should be to see prediction text over the option                                                   # None
+    When user clicks on clarity button                                                                          # None
+    Then user should able to see a clarity message appearing                                                    # None
+    And user should able to see enabled clarity button and disabled prediction and popularity button            # None
+    When user clicks on any option and clicks on submit button                                                  # None
+    Then user should able to see enabled popularity button and disabled prediction and clarity button in step 3 # None
+    When user clicks on popularity button                                                                       # None
+    Then user should able to be popularity icon over the options                                                # None
+    When user clicks on any option in step 3 and submit button                                                  # None
+    Then user should able to see disabled all three lifeline option in step 4                                   # None
+    When user clicks on info icon on the right top corner                                                       # None
+    Then user should able to be see udt scenario name and udt scenario description                              # None
+    When user closes that popup and clicks on any option in the step 4                                          # None
+    And user clicks on submit button                                                                            # None
+    Then user should able to see disabled all three lifeline option in step 5                                   # None
+    When user clicks on any option and submit button in step 5                                                  # None
+    Then user clicks on next buttons and able to end text                                                       # None
+

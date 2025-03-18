@@ -1,0 +1,1 @@
+2025-03-18 10:43:47.164585: Scenario Tc005 Verify the functionality of lifeline in the sim while playing finished with status failed

@@ -17,7 +17,7 @@ config.read('config.ini')
 
 class simStudioAdminPage:
     def __init__(self, page, browser_context):
-
+        #xpaths
         self.actions = WebActions(page, browser_context)
         self.moduleNameInpathmanage="//td[normalize-space()='chkpath details']"
         self.sign_in_with_google_btn = "//div[@class='ssJRIf']"
